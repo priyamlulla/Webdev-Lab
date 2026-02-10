@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Light</title>
+
+    <style>
+        body {
+            background-color: #f2f4f8;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .traffic-box {
+            width: 120px;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 30px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .light {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: grey;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Traffic Light Simulation</h2>
+
+    <div class="traffic-box">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+    </div>
+
+    <button onclick="changeLight()">Change Light</button>
+
+    <script>
+        let currentLight = "red";
+        document.getElementById("red").style.backgroundColor = "red";
+
+        function changeLight() {
+
+            document.getElementById("red").style.backgroundColor = "grey";
+            document.getElementById("yellow").style.backgroundColor = "grey";
+            document.getElementById("green").style.backgroundColor = "grey";
+
+            if (currentLight === "red") {
+                document.getElementById("green").style.backgroundColor = "green";
+                currentLight = "green";
+            }
+            else if (currentLight === "green") {
+                document.getElementById("yellow").style.backgroundColor = "yellow";
+                currentLight = "yellow";
+            }
+            else {
+                document.getElementById("red").style.backgroundColor = "red";
+                currentLight = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
