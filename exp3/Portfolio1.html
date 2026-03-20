@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Portfolio</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #f2f4f8;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Priyam Lulla</h1>
+        <p>Student Web Developer</p>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile">
+        <img src="A1.jpg" alt="Profile Photo" width="120">
+
+        <p id="aboutText" style="color:#555;">
+            I want to become a professional web developer.
+        </p>
+    </div>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- Hobbies -->
+    <div class="box">
+        <h2>Hobbies</h2>
+        <p>Reading, music, internet browsing</p>
+    </div>
+
+    <!-- Passion -->
+    <div class="box">
+        <h2>Passion</h2>
+        <p>Learning new technologies</p>
+    </div>
+
+    <!-- Past Work -->
+    <div class="box">
+        <h2>Past Work</h2>
+        <p>College practical assignments</p>
+    </div>
+
+    <!-- Social Life -->
+    <div class="box">
+        <h2>Social Life</h2>
+        <p>Friends, group studies, events</p>
+    </div>
+
+    <!-- Dynamic List Section -->
+    <h2>Dynamic List</h2>
+    <ul id="myList"></ul>
+
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+
+    <br><br>
+
+    <!-- Background Color Buttons -->
+    <button onclick="changeColor('lightblue')">Blue</button>
+    <button onclick="changeColor('lightgreen')">Green</button>
+    <button onclick="changeColor('lightpink')">Pink</button>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="https://www.instagram.com/">Instagram</a> |
+        <a href="https://in.linkedin.com/">LinkedIn</a>
+    </div>
+
+    <!-- Single Script Section -->
+    <script>
+
+        function changeText() {
+            document.getElementById("aboutText").innerHTML =
+                "I am learning DOM Manipulation using JavaScript.";
+        }
+
+        function addItem() {
+            let li = document.createElement("li");
+            li.innerHTML = "New List Item";
+            document.getElementById("myList").appendChild(li);
+        }
+
+        function removeItem() {
+            let list = document.getElementById("myList");
+            if (list.lastChild) {
+                list.removeChild(list.lastChild);
+            }
+        }
+
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
